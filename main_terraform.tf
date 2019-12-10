@@ -26,7 +26,7 @@ data "aws_ami" "juan_aws_ami" {
 
 # Criando um security-group para a instância
 resource "aws_security_group" "juan-sg" {
-  name = "juan-security"
+  name = "juan_security"
   description = "SG do Juan"
   vpc_id = "vpc-fc37ae86"
 
@@ -85,6 +85,6 @@ resource "aws_instance" "juan-ec2" {
   }
 
   tags = {
-    Name = "Juan_Terraform_v5"
+    Name = "Nome da sua Intância"
   }
 }
