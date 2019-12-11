@@ -56,6 +56,16 @@ $ git clone https://github.com/jntoledo/desafio3.git
 
 #### Após baixar o repositório vamos as configurações dos templates e executar os mesmos.
 
+## **Configurando Arquivos do Blog**
+Acesse o diretório **blog** que você baixou do repositório. Dentro dele acesso o ***ansible.cfg***.
+<br>
+
+Nele você vai precisar alterar a linha que mostra o caminho do arquivo ***hosts*** que também esta nessa mesma pasta. No meu caso esta desse modo:
+> inventory      = ~/Documents/git/desafio3/blog/hosts
+<br>
+
+Altere o caminho "***~/Documents/git/desafio3/blog/hosts***" para o caminho de onde esta salvo sua pasta ***blog*** e arquivo ***hosts***. Após alterar, salve o arquivo e vmaos para o próximo passo.
+
 ## **Configurando e executando o Packer**
 
 Dentro do repositório que você baixou vamos alterar o arquivo **template_packer.json**. Nele você precisa aterar algumas linhas.
@@ -112,6 +122,9 @@ Dentro desse arquivo altere a linha:
 > server_name 100.100.100.100;
 > <BR>
 
-Troque o "100.100.100.100" pelo IP da sua instância, ou seu DNS. Agora basta colocar seu IP ou seu DNS em algum navegador que você já cpnsiguirá acessar a página de Admin do seu blog.
+Troque o "100.100.100.100" pelo IP da sua instância, ou seu DNS. Após trocar, reinicie o Nginx para aplicar a alteração, com o comando:
+> systemctl restart nginx <br>
+
+Agora basta colocar seu IP ou seu DNS em algum navegador que você já consiguirá acessar a página de Admin do seu blog.
 
 ### ***Pronto, executamos o Packer com Ansible criando toda a estrutura necessária para seu blog e salvando em uma AMI. Depois executamos o Terraform para iniciar essa AMI em uma instância Ec2 toda configurada para o seu Blog.***

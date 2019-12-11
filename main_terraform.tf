@@ -15,7 +15,7 @@ data "aws_ami" "juan_aws_ami" {
   most_recent = true
   filter {
     name = "name"
-    values = ["juan_packer_ansible"]
+    values = ["juan_ami_packer_2"]
   }
   filter {
     name = "virtualization-type"
@@ -67,7 +67,7 @@ resource "aws_security_group" "juan-sg" {
       from_port       = "22"
       to_port         = "22"
       protocol        = "tcp"
-      cidr_blocks = [ "177.70.100.10/32" ]
+      cidr_blocks = [ "0.0.0.0/0" ]
   }
 
 }
@@ -97,6 +97,6 @@ resource "aws_instance" "juan-ec2" {
   }
   # Aqui em "Name" você irá colocar o nome da sua instância.
   tags = {
-    Name = "Name da sua Instância"
+    Name = "Juan Final"
   }
 }

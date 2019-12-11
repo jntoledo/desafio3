@@ -1,0 +1,9 @@
+---
+
+listen: /var/run/php-fpm/php-fpm.sock
+
+listen_owner: nginx
+listen_group: nginx
+listen_mode: "0660"
+n_user: nginx
+n_group: nginx

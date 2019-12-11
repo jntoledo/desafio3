@@ -1,0 +1,4 @@
+---
+# Coloque aqui o IP ou Dns do seu Blog Conforme exemplo abaixo.
+seu_site: 100.100.100.100
+folder_wordpress: /var/www/html/blog/wordpress
